@@ -5,13 +5,13 @@ Post error to Slack.
 ## Installation
 
 ```
-npm i err-to-slack -S
+npm i err-to-slack
 ```
 
 ## Usage
 
 ``` javascript
-import { errToSlack } from 'err-to-slack';
+const { errToSlack } = require('err-to-slack');
 
 fs.readFile('test.txt', errToSlack('fs.readFile', (err, data) => {
   // Do something
