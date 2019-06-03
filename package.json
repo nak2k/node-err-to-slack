@@ -7,7 +7,9 @@
     "url": "https://github.com/nak2k/node-err-to-slack/issues"
   },
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "tape": "^4.10.2"
+  },
   "homepage": "https://github.com/nak2k/node-err-to-slack",
   "keywords": [
     "slack"
@@ -19,8 +21,8 @@
     "url": "git+https://github.com/nak2k/node-err-to-slack.git"
   },
   "scripts": {
-    "build": "npm run lint && babel -d lib/ src/",
-    "lint": "eslint src"
+    "prepublishOnly": "npm test",
+    "test": "tape test/test*.js"
   },
   "files": [
     "README.md",
