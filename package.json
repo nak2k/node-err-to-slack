@@ -1,6 +1,6 @@
 {
   "name": "err-to-slack",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Post errors to Slack",
   "author": "Kengo Nakatsuka <kengo.nakatsuka@gmail.com>",
   "bugs": {
