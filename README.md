@@ -1,6 +1,6 @@
 # err-to-slack
 
-Post error to Slack.
+Post errors to Slack.
 
 ## Installation
 
@@ -10,12 +10,10 @@ npm i err-to-slack
 
 ## Usage
 
-``` javascript
-const { errToSlack } = require('err-to-slack');
+``` typescript
+import { errToSlack } from 'err-to-slack';
 
-fs.readFile('test.txt', errToSlack('fs.readFile', (err, data) => {
-  // Do something
-}));
+cont data = await fs.promises.readFile('test.txt').catch(errToSlack('fs.readFile'));
 ```
 
 ## Environment Variables
