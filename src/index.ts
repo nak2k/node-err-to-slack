@@ -1,13 +1,17 @@
 import { request } from 'https';
 import { URL } from 'url';
 
-export function errToSlack(message?: string) {
+export function errToSlack(message?: string, suppression?: boolean) {
   const {
     SLACK_INCOMMING_WEBHOOK_URL: url,
   } = process.env;
 
   if (!url) {
-    return (err: Error) => { };
+    return (err: Error) => {
+      if (!suppression) {
+        throw err;
+      }
+    };
   }
 
   return (err: Error) => {
@@ -26,6 +30,10 @@ export function errToSlack(message?: string) {
 
     req.write(JSON.stringify(payload));
     req.end();
+
+    if (!suppression) {
+      throw err;
+    }
   };
 }
 
