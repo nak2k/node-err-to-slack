@@ -22,7 +22,7 @@ cont data = await fs.promises.readFile('test.txt')
 
 ## Environment Variables
 
-- `SLACK_INCOMMING_WEBHOOK_URL`
+- `SLACK_INCOMING_WEBHOOK_URL`
 - `SLACK_CHANNEL`
 
 ## License

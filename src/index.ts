@@ -2,9 +2,8 @@ import { request } from 'https';
 import { URL } from 'url';
 
 export function errToSlack(message?: string, suppression?: boolean) {
-  const {
-    SLACK_INCOMMING_WEBHOOK_URL: url,
-  } = process.env;
+  const { env } = process;
+  const url = env.SLACK_INCOMING_WEBHOOK_URL || env.SLACK_INCOMMING_WEBHOOK_URL;
 
   if (!url) {
     return (err: Error) => {
