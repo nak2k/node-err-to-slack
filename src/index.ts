@@ -28,6 +28,9 @@ export function errToSlack(message?: string, suppression?: boolean) {
     payload.channel = process.env.SLACK_CHANNEL;
 
     req.write(JSON.stringify(payload));
+    req.on('error', (err: NodeJS.ErrnoException) => {
+      console.log(`err-to-slack: (${err.code}) ${err.message}`);
+    });
     req.end();
 
     if (!suppression) {
