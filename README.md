@@ -13,7 +13,7 @@ npm i err-to-slack
 ``` typescript
 import { errToSlack } from 'err-to-slack';
 
-cont data = await fs.promises.readFile('test.txt')
+const data = await fs.promises.readFile('test.txt')
   .catch(errToSlack('fs.readFile'))
   .catch((err: Error) => {
     // Additional error handling.
