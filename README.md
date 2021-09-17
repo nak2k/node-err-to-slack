@@ -14,7 +14,7 @@ npm i err-to-slack
 import { errToSlack } from 'err-to-slack';
 
 const data = await fs.promises.readFile('test.txt')
-  .catch(errToSlack('fs.readFile'))
+  .catch(errToSlack)
   .catch((err: Error) => {
     // Additional error handling.
   });
